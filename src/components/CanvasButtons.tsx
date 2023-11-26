@@ -12,7 +12,6 @@ export const CanvasButton = ({ Icon, onClick, actionType }: TCanvasButtonProps) 
 
 	return (
 		<button className={s.button} onClick={() => {
-			console.log(onClick)
 			onClick(actionType)
 		}
 		}>{<Icon size="30px" />}</button>
