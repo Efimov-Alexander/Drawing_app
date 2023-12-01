@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Drawing_app/static/css/main.4da2f705.css",
+    "main.js": "/Drawing_app/static/js/main.ecbc08da.js",
+    "index.html": "/Drawing_app/index.html",
+    "main.4da2f705.css.map": "/Drawing_app/static/css/main.4da2f705.css.map",
+    "main.ecbc08da.js.map": "/Drawing_app/static/js/main.ecbc08da.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4da2f705.css",
+    "static/js/main.ecbc08da.js"
+  ]
+}
