@@ -15,6 +15,7 @@ export const useApp = (editor: FabricJSEditor | undefined) => {
 	const { borderDropdown, colorPicker, currentPage, canvasState } = useAppSelector(state => state.app)
 	const { setCurrentPage, setCanvasState } = useActions()
 	const [modalSaveIsOpen, setModalSaveIsOpen] = useState(false)
+	const [menu, setMenu] = useState(false)
 	const lastPage = canvasState.length - 1
 
 	editor?.canvas.on('object:moving', () => {
@@ -30,6 +31,7 @@ export const useApp = (editor: FabricJSEditor | undefined) => {
 			lastPosY = e.e.clientY;
 		}
 	});
+
 	editor?.canvas.on('mouse:move', function (event) {
 		const activeObject = editor?.canvas.getActiveObject()
 		if (isDragging && editor && editor.canvas.viewportTransform && (activeObject === undefined || activeObject === null)) {
@@ -177,5 +179,5 @@ export const useApp = (editor: FabricJSEditor | undefined) => {
 		}
 	}
 
-	return { actionHandler, lastPage, currentPage, modalSaveContent, modalSaveIsOpen, setModalSaveIsOpen }
+	return { actionHandler, lastPage, currentPage, modalSaveContent, modalSaveIsOpen, setModalSaveIsOpen, menu, setMenu }
 }

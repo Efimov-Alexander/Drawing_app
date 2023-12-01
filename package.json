@@ -2,6 +2,7 @@
   "name": "drawing_app_ts",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://efimov-alexander.github.io/Drawing_app/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
@@ -15,6 +16,7 @@
     "@types/react-redux": "^7.1.31",
     "fabric": "^5.3.0",
     "fabricjs-react": "^1.2.1",
+    "gh-pages": "^6.1.0",
     "react": "^18.2.0",
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
@@ -30,7 +32,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [

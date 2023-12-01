@@ -18,11 +18,11 @@ const CanvasButtons: TCanvasButton[] = [{ actionType: "line", icon: icons.line, 
 
 export const App = () => {
 	const { editor, onReady } = useFabricJSEditor()
-	const { actionHandler, currentPage, lastPage, modalSaveContent, setModalSaveIsOpen, modalSaveIsOpen } = useApp(editor)
+	const { actionHandler, currentPage, lastPage, modalSaveContent, setModalSaveIsOpen, modalSaveIsOpen, menu, setMenu } = useApp(editor)
 
 	return (
 		<div className='main__container'>
-			<aside className="sidebar">
+			<aside className={menu ? "sidebar active" : `sidebar`}>
 				<div className="sidebar__wrapper">
 					<button
 						className={`sidebar__button  ${currentPage == 0 ? "disable" : ""} `}
@@ -62,6 +62,11 @@ export const App = () => {
 					<span></span>
 				</button>
 			</div></div>}
+			<div onClick={() => setMenu(prev => !prev)} className={menu ? "burger-button active" : "burger-button"} >
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 		</div>
 	)
 
