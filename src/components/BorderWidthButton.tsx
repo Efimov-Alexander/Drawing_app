@@ -3,19 +3,20 @@ import { icons } from '../aseets/icons'
 
 const BorderDropdownList = [1, 2, 3, 4, 5]
 
-export const BorderDropdownButton = () => {
+export const BorderWidthButton = () => {
 
 	const { borderDropdown } = useAppSelector(state => state.app)
 	const { setBorderDropdownIsOpen, setBorderDropdownValue } = useActions()
 
 	return (
-		<button onClick={() => setBorderDropdownIsOpen(!borderDropdown.isOpen)} className="border-dropdown-button canvas-button">{<icons.borderWidth />}
-			{borderDropdown.isOpen && <ul className="border-dropdown-list">
+		<button onClick={() => setBorderDropdownIsOpen(!borderDropdown.isOpen)} className="sidebar__border-width-button sidebar__button">{<icons.borderWidth />}
+			{borderDropdown.isOpen && <div onClick={() => setBorderDropdownIsOpen(false)} className="sidebar__border-width-button-overlay" />}
+			{borderDropdown.isOpen && <ul className="sidebar__border-width-list">
 				{BorderDropdownList.map(item => <li key={item} className={`${borderDropdown.value === item ? "active" : ""}`} onClick={(e) => {
 					e.stopPropagation()
 					setBorderDropdownIsOpen(false)
 					setBorderDropdownValue(item)
-				}}></li>)}
+				}}><span /></li>)}
 			</ul>}
 		</button>
 	)

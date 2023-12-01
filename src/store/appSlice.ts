@@ -9,8 +9,9 @@ type TInitialState = {
 		value: number,
 	},
 	canvasState: any[],
-	currentPage: number
+	currentPage: number,
 }
+
 export const initialState: TInitialState = {
 	colorPicker: {
 		isOpen: false,
@@ -41,7 +42,7 @@ const appSlice = createSlice({
 			state.borderDropdown.isOpen = action.payload
 		},
 		setCanvasState(state, action: PayloadAction<any>) {
-			state.canvasState= action.payload
+			state.canvasState = action.payload
 		},
 		setCurrentPage(state, action: PayloadAction<number>) {
 			state.currentPage = action.payload
